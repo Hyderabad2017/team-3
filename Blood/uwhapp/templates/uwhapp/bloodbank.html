@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    var loc;
+    </script>
 </head>
 <body>
 
@@ -34,49 +37,29 @@
         <td>{{each_detail.blood_type}}</td>
         <td>{{each_detail.last_donation}}</td>
         <td>{{each_detail.haemo}}</td>
-        <!----------->
-        <script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } 
-}
-
-function showPosition(position) {
-    
-    var latitude=position.coords.latitude;
-    var logitude=position.coords.longitude;
-    
-    
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
-}
-
-</script>
-            
-        <!--------->
-            
         </form>
+        <td><script>getLocation();</script>
+        <h4 id="donor_location"></h4>
+        </td>
         </tr>
         {% endfor %}
 <script>
+      var lat,long;
+      function getLocation() {
+      if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+            } 
+        }
+
+        function showPosition(position) {
+            lat=position.coords.latitude;
+            long=position.coords.longitude;
+            document.write(lat,long);
+            }
+
+        loc=getDistanceFromLatLonInKm(lat,long,{{latitude}},{{longitude}});
+        document.getElementById("donor_location").innerHTML=loc;
+         
 function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
   var R = 6371; // Radius of the earth in km
   var dLat = deg2rad(lat2-lat1);  // deg2rad below
