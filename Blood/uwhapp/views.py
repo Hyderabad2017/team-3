@@ -27,6 +27,19 @@ class DonorPage(View):
 
 
 class BloodbankLogincheck(View):
+    def get_context_dict(self):
+        all_donors=Donor.objects.all()
+        list_donor=[]
+        for each_donor in all_donors:
+            each_context={
+                'name':each_donor.name,
+                'blood_type':each_donor.blood_type,
+                'age':each_donor.age,
+                'haemo':each_donor.haemo,
+                'last_donation':each_donor.last_donation
+            }
+            list_donor.append(each_context)
+        return list_donor
     def post(self, request):
         username = request.POST.get('user')
         password = request.POST.get('pass')
@@ -35,7 +48,8 @@ class BloodbankLogincheck(View):
             return redirect('/uwhapp/bloodbank')
         blood_bank_obj = blood_bank_obj[0]
         if blood_bank_obj.password == password:
-            return render(request, 'uwhapp/bloodbank.html')
+            context=self.get_context_dict()
+            return render(request, 'uwhapp/bloodbank.html',context)
         else:
             return redirect('/uwhapp/bloodbank')
 
@@ -75,5 +89,7 @@ class RegisterDetailsOfDonor(View):
             last_donation=request.POST['last_donation']
         )
         return render(request,'uwhapp/success.html')
+
+
 
 
