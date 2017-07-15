@@ -31,3 +31,9 @@ class BloodBank(models.Model):
 
     def __str__(self):
         return self.name
+
+class Requests(models.Model):
+    requester_name = models.CharField(max_length=100)
+    request_units = models.IntegerField()
+    blood_bank = models.ForeignKey(BloodBank)
+
