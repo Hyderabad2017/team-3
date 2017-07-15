@@ -74,4 +74,6 @@ class RegisterDetailsOfDonor(View):
             haemo=request.POST['haemo'],
             last_donation=request.POST['last_donation']
         )
+        return render(request,'uwhapp/success.html')
+
 
