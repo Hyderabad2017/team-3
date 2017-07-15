@@ -110,15 +110,18 @@ class DonorRegister(View):
 
 class RegisterDetailsOfDonor(View):
     def post(self, request):
+        last_donated = request.POST['last_donated']
+        if last_donated == '':
+            last_donated = datetime.date.today() - datetime.timedelta(3*365/12)
         Donor.objects.create(
-            name=request.POST['name'],
+            name=request.POST['user'],
             userid=request.POST['userid'],
             password=request.POST['pass'],
             blood_type=request.POST['blood_type'],
             age=int(request.POST['age']),
             weight=int(request.POST['weight']),
             haemo=float(request.POST['haemo']),
-            last_donation=request.POST['last_donation'],
+            last_donation=last_donated,
             mobile=request.POST['mobile']
         )
         return render(request, 'uwhapp/success.html')
