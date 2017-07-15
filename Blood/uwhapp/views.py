@@ -55,8 +55,13 @@ class BloodbankLogincheck(View):
 
 
 class DonorLogincheck(View):
-    # def get_context_dict(self):
-
+    def get_context_dict(self,username):
+        donor = Donor.objects.get(userid=username)
+        context={
+            'name':donor.name,
+            'points':donor.points,
+        }
+        return context
     def post(self, request):
         username = request.POST.get('user')
         password = request.POST.get('pass')
@@ -65,7 +70,7 @@ class DonorLogincheck(View):
             return redirect('/uwhapp/donor')
         blood_bank_obj = blood_bank_obj[0]
         if blood_bank_obj.password == password:
-            # context=self.get_context_dict()
+            context=self.get_context_dict(username)
             return render(request, 'uwhapp/donor.html')
         else:
             return redirect('/uwhapp/donor')
