@@ -27,20 +27,27 @@
     <tbody>
         {% for each_detail in list_donor %}
     <tr>
+        <form action="donation_accept" method="post">
         <td>{{each_detail.name}}</td>
         <td>{{each_detail.age}}</td>
         <td>{{each_detail.blood_type}}</td>
         <td>{{each_detail.last_donation}}</td>
         <td>{{each_detail.haemo}}</td>
+        <td><input type="submit" value="Yes"></td>
+            <input type="hidden" class="btn btn-primary" name={{each_detail.userid}}>
+        </form>
         </tr>
+        
         {% endfor %}
       </tbody>
   </table>
   </div>
     <center>
-    <a href="send_alert" class="btn btn-danger">
-    Send SMS Alert
-    </a>
+        <form action="send_alert" method="post">
+            <input type="submit" class="btn btn-danger" value="Send Alert">
+            <input type="hidden" name="name">
+        </form>
     </center>
+        
 </body>
 </html>
