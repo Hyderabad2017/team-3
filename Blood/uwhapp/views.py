@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 
 from django.views import View
 from django.http import HttpResponseBadRequest
-from models import BloodBank,Donor
+from models import BloodBank, Donor
 
 
 # Create your views here.
@@ -20,9 +20,10 @@ class Bloodbank(View):
     def get(self, request):
         return render(request, 'uwhapp/bloodbank_login.html')
 
-class Donor(View):
-    def get(self,request):
-        return render(request,'uwhapp/donor_login.html')
+
+class DonorPage(View):
+    def get(self, request):
+        return render(request, 'uwhapp/donor_login.html')
 
 
 class BloodbankLogincheck(View):
