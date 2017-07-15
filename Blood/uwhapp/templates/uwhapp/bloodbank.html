@@ -11,7 +11,7 @@
 <body>
 
 <div class="container">
-<form action=" " method=" ">
+
    <h2>List of Donors</h2>
   <!-- <p>The .table-striped class adds zebra-stripes to a table:</p> -->
   <table class="table table-striped">
@@ -24,31 +24,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>A+</td>
-        <td><input type="checkbox" name="vehicle" value="Bike"></td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        <td>A+</td>
-        <td><input type="checkbox" name="vehicle" value="Bike"></td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td>A+</td>
-        <td><input type="checkbox" name="vehicle" value="Bike"></td>
-      </tr>
-    </tbody>
+        {% for each_detail in list_donor %}
+    <tr>
+        <td>{{each_detail.name}}</td>
+        <td>{{each_detail.age}}</td>
+        <td>{{each_detail.blood_type}}</td>
+        <td>{{each_detail.last_donation}}</td>
+        <td>{{each_detail.haemo}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
   </table>
-  <button type="submit" class="btn btn-primary btn-md">Submit</button>
-</div>
-</form>
+  </div>
+
 </body>
 </html>
