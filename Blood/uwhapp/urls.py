@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from . import views
 urlpatterns = [
+    url(r'^donation_accept',views.DonationAccept.as_view()),
     url(r'^send_alert',views.SendAlert.as_view()),
     url(r'^donor_register_detials',views.RegisterDetailsOfDonor.as_view()),
     url(r'^donor_register',views.DonorRegister.as_view()),

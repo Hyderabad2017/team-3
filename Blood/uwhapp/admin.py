@@ -16,10 +16,10 @@ class BloodbankModel(admin.ModelAdmin):
 
 admin.site.register(BloodBank,BloodbankModel)
 
-class RequestModel(admin.ModelAdmin):
+class RequestToDonorModel(admin.ModelAdmin):
     pass
 
-admin.site.register(Requests,RequestModel)
+admin.site.register(RequestToDonor,RequestToDonorModel)
 
 class EventModel(admin.ModelAdmin):
     pass

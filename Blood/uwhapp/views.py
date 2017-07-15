@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+import datetime
 from django.shortcuts import render, redirect
 
 from django.views import View
 from django.http import HttpResponseBadRequest
-from models import BloodBank, Donor, Event
+from models import BloodBank, Donor, Event, RequestToDonor, DonorHistory
 
 
 # Create your views here.
@@ -27,6 +27,19 @@ class DonorPage(View):
 
 
 class BloodbankLogincheck(View):
+    def donor_requests(self):
+        donorRequests = RequestToDonor.objects.all()
+        request_list = []
+        for each_request in donorRequests:
+            request_dict = {
+                'name': each_request.requestee.name,
+                'userid': each_request.requestee.userid,
+                'request_units': each_request.request_date,
+                'blood_bank': each_request.blood_banks.name
+            }
+            request_list.append(request_dict)
+        return request_list
+
     def get_context_dict(self):
         all_donors = Donor.objects.all()
         list_donor = []
@@ -39,7 +52,8 @@ class BloodbankLogincheck(View):
                 'last_donation': each_donor.last_donation
             }
             list_donor.append(each_context)
-            list_donor = {'list_donor': list_donor}
+            donor_request = self.donor_requests()
+            list_donor = {'list_donor': list_donor, 'donor_requests': donor_request}
         return list_donor
 
     def post(self, request):
@@ -60,7 +74,8 @@ class DonorLogincheck(View):
     def get_context_dict(self, username):
         donor = Donor.objects.get(userid=username)
         context = {
-            'name': donor.name
+            'name': donor.name,
+            'last_donation': donor.last_donation
         }
         events = Event.objects.all()
         events_list = []
@@ -110,7 +125,37 @@ class RegisterDetailsOfDonor(View):
 
 
 class SendAlert(View):
-    def post(self,request):
+    def send_sms_request(self, mobile):
+        pass
+
+    def post(self, request):
         all_donor = Donor.objects.all()
+        blood_bank = BloodBank.objects.get(name=request.POST.get('name'))
         for each_donor in all_donor:
-            print each_donor
+            self.send_sms_request(each_donor.mobile)
+            RequestToDonor.objects.create(
+                requestee=each_donor,
+                request_units=5,
+                blood_bank=blood_bank
+            )
+        return render(request, 'uwhapp/success_request.html')
+
+
+class DonationAccept(View):
+    def send_thank_sms(self, userid):
+        user_object = Donor.objects.get(userid=userid)
+        mobile = user_object.mobile
+        pass
+
+    def post(self, request):
+        userid = request.POST.get('userid')
+        request_donor_objects = RequestToDonor.objects.all()
+        for each_request_to_donor in request_donor_objects:
+            if each_request_to_donor.requestee.userid == userid:
+                each_request_to_donor.delete()
+        user_object = Donor.objects.get(userid=userid)
+        DonorHistory.objects.create(
+            date=datetime.datetime.now(),
+            donor=user_object
+        )
+        self.send_thank_sms(userid)
