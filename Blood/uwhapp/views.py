@@ -53,7 +53,7 @@ class BloodbankLogincheck(View):
             }
             list_donor.append(each_context)
             donor_request = self.donor_requests()
-            list_donor = {'list_donor': list_donor, 'donor_requests': donor_request,'blood_units':blood_units}
+        list_donor = {'list_donor': list_donor, 'donor_requests': donor_request,'blood_units':blood_units}
         return list_donor
 
     def post(self, request):
