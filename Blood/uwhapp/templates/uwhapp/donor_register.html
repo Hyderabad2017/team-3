@@ -3,7 +3,14 @@
 <head>
   <link href="//db.onlinewebfonts.com/c/a4e256ed67403c6ad5d43937ed48a77b?family=Core+Sans+N+W01+35+Light" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="{%static 'css/registration.css'%}" type="text/css">
-
+<style>
+    footer{
+height:20%;
+width:100%;
+background-color:black;
+    color: aliceblue;
+    text-align: center;
+}</style>
 </head>
 <body onload="getLocation()">
   <!--  <script>
@@ -38,8 +45,9 @@ function showError(error) {
     }
 }
 </script>-->
-<div class="body-content">
-  <div class="module">
+<div class="body-content container">
+  <div class="module row">
+      
     <h1>Create an account</h1>
     <form class="form" action="donor_register_detials" method="post" enctype="multipart/form-data" autocomplete="off">
 
@@ -68,3 +76,7 @@ function showError(error) {
     </form>
   </div>
 </div>
+    <footer>
+        <p><br>Opportunities knock the door sometimes, so don’t let it go and donate blood!</p></footer>
+    </body>
+</html>
