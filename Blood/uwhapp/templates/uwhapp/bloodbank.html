@@ -34,25 +34,37 @@
         <td>{{each_detail.last_donation}}</td>
         <td>{{each_detail.haemo}}</td>
         </form>
-        </tr>
         
+            <form action="donation_accept" method="post">
+            <td>
+            <input type="submit" value="Yes">
+            
+            </td>        
+        </form>
+        
+        </tr>
         {% endfor %}
       </tbody>
   </table>
-  </div>
+  
     <center>
         <form action="send_alert" method="post">
             <input type="submit" class="btn btn-danger" value="Send Alert">
-            <input type="hidden" name="name">
+            <input type="hidden" value="donar_name" name="name">
+            <input type="hidden" class="btn btn-primary" name={{each_detail.userid_bloodbank}} value="userid">
         </form>
     </center>
-    <table>
+    
+    <table class="table table-striped">
+        <thead>
         <tr>
         <th>User Id</th>
         <th>Name</th>
         <th>No of Units required</th>
         <th>Blood Bank</th>
         </tr>
+        </thead>
+        <tbody>
         {% for each_detail in donor_requests %}
         <tr>
         <form action="donation_accept" method="post">
@@ -61,16 +73,19 @@
         <td>{{each_detail.request_units}}</td>
         <td>{{each_detail.blood_bank}}</td>
         </form>
-        <td>
+        
             <form action="donation_accept" method="post">
+                <td>
             <input type="submit" value="Yes">
             <input type="hidden" class="btn btn-primary" name={{each_detail.userid}}>
+             </td>
             </form>
-        </td>    
+           
         </tr>
         
         {% endfor %}
-       
+       </tbody>
     </table>
+    </div>
 </body>
 </html>
