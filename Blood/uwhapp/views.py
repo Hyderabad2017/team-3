@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+import urllib2
+import cookielib
+from getpass import getpass
+import sys
+
+
 from __future__ import unicode_literals
 import datetime
 from django.shortcuts import render, redirect
@@ -16,10 +22,8 @@ class Counter:
 
     def increment(self):
         self.counter += 1
-
     def set_to_zero(self):
         self.counter = 0
-
 
 class Index(View):
     def get(self, request):
@@ -44,13 +48,17 @@ class BloodbankLogincheck(View):
             request_dict = {
                 'name': each_request.requestee.name,
                 'userid': each_request.requestee.userid,
-                'request_units': each_request.request_units,
-                'blood_bank': each_request.blood_bank.name
+                'request_units': each_request.request_date,
+                'blood_bank': each_request.blood_banks.name
             }
             request_list.append(request_dict)
         return request_list
 
+<<<<<<< HEAD
+    def get_context_dict(self, blood_units):
+=======
     def get_context_dict(self, blood_units, username):
+>>>>>>> 387da88fcb245de7f7871d855a44a9351175c431
         all_donors = Donor.objects.all()
         list_donor = []
         for each_donor in all_donors:
@@ -63,8 +71,12 @@ class BloodbankLogincheck(View):
             }
             list_donor.append(each_context)
             donor_request = self.donor_requests()
+<<<<<<< HEAD
+        list_donor = {'list_donor': list_donor, 'donor_requests': donor_request, 'blood_units': blood_units}
+=======
         list_donor = {'list_donor': list_donor, 'donor_requests': donor_request, 'blood_units': blood_units,
                       'userid_bloodbank': username}
+>>>>>>> 387da88fcb245de7f7871d855a44a9351175c431
         return list_donor
 
     def post(self, request):
@@ -75,7 +87,11 @@ class BloodbankLogincheck(View):
             return redirect('/uwhapp/bloodbank')
         blood_bank_obj = blood_bank_obj[0]
         if blood_bank_obj.password == password:
+<<<<<<< HEAD
+            context = self.get_context_dict(blood_bank_obj.blood_units)
+=======
             context = self.get_context_dict(blood_bank_obj.blood_units, username)
+>>>>>>> 387da88fcb245de7f7871d855a44a9351175c431
             return render(request, 'uwhapp/bloodbank.html', context)
         else:
             return redirect('/uwhapp/bloodbank')
@@ -109,7 +125,7 @@ class DonorLogincheck(View):
         blood_bank_obj = blood_bank_obj[0]
         if blood_bank_obj.password == password:
             context = self.get_context_dict(username)
-            context['counter'] = Counter()
+            context['counter']=Counter()
             return render(request, 'uwhapp/donor.html', context)
         else:
             return redirect('/uwhapp/donor')
@@ -138,9 +154,29 @@ class RegisterDetailsOfDonor(View):
         )
         return render(request, 'uwhapp/success.html')
 
+    
 
+    
+    
 class SendAlert(View):
     def send_sms_request(self, mobile):
+<<<<<<< HEAD
+        #login creds
+        username = '8686342823'
+        passwd = 'vamshi17'
+        message = 'United Way of Hyderabad' 
+        #Logging into the SMS Site
+        url = 'http://site24.way2sms.com/Login1.action?'
+        data = 'username='+username+'&password='+passwd+'&Submit=Sign+in'
+ 
+        #For Cookies:
+        cj = cookielib.CookieJar()
+        opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+ 
+        # Adding Header detail:
+        opener.addheaders = [('User-Agent','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36')]
+ 
+=======
         # login creds
         username = '8686342823'
         passwd = 'vamshi17'
@@ -157,11 +193,30 @@ class SendAlert(View):
         opener.addheaders = [('User-Agent',
                               'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36')]
 
+>>>>>>> 387da88fcb245de7f7871d855a44a9351175c431
         try:
             usock = opener.open(url, data)
         except IOError:
             print("Error while logging in.")
             sys.exit(1)
+<<<<<<< HEAD
+ 
+ 
+        jession_id = str(cj).split('~')[1].split(' ')[0]
+        send_sms_url = 'http://site24.way2sms.com/smstoss.action?'
+        send_sms_data = 'ssaction=ss&Token='+jession_id+'&mobile='+mobile+'&message='+message+'&msgLen=136'
+        opener.addheaders = [('Referer', 'http://site25.way2sms.com/sendSMS?Token='+jession_id)]
+        try:
+            sms_sent_page = opener.open(send_sms_url,send_sms_data)
+        except IOError:
+            print("Error while sending message")
+    
+        sys.exit(1)
+
+
+
+
+=======
 
         jession_id = str(cj).split('~')[1].split(' ')[0]
         send_sms_url = 'http://site24.way2sms.com/smstoss.action?'
@@ -173,10 +228,11 @@ class SendAlert(View):
             print("Error while sending message")
 
         sys.exit(1)
+>>>>>>> 387da88fcb245de7f7871d855a44a9351175c431
 
     def post(self, request):
         all_donor = Donor.objects.all()
-        blood_bank = BloodBank.objects.get(userid=request.POST.get('userid_bloodbank'))
+        blood_bank = BloodBank.objects.get(name=request.POST.get('name'))
         for each_donor in all_donor:
             self.send_sms_request(each_donor.mobile)
             RequestToDonor.objects.create(
