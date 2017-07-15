@@ -1,7 +1,29 @@
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+	
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: green;}
+}
+
+/* The element to apply the animation to */
+strong{
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+body {
+    background-color: green;
+    animation-name: example;
+    animation-duration: 3s;
+}
+</style>
 </head>
 <body>
-SUCCESS REQUEST
+<div class="alert alert-success">
+  <strong>Success!</strong>
+</div>
 </body>
 </html>
