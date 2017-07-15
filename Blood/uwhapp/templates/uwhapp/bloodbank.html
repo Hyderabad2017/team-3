@@ -33,8 +33,6 @@
         <td>{{each_detail.blood_type}}</td>
         <td>{{each_detail.last_donation}}</td>
         <td>{{each_detail.haemo}}</td>
-        <td><input type="submit" value="Yes"></td>
-            <input type="hidden" class="btn btn-primary" name={{each_detail.userid}}>
         </form>
         </tr>
         
@@ -48,6 +46,31 @@
             <input type="hidden" name="name">
         </form>
     </center>
+    <table>
+        <tr>
+        <th>User Id</th>
+        <th>Name</th>
+        <th>No of Units required</th>
+        <th>Blood Bank</th>
+        </tr>
+        {% for each_detail in donor_requests %}
+        <tr>
+        <form action="donation_accept" method="post">
+        <td>{{each_detail.userid}}</td>
+        <td>{{each_detail.name}}</td>
+        <td>{{each_detail.request_units}}</td>
+        <td>{{each_detail.blood_bank}}</td>
+        </form>
+        <td>
+            <form action="donation_accept" method="post">
+            <input type="submit" value="Yes">
+            <input type="hidden" class="btn btn-primary" name={{each_detail.userid}}>
+            </form>
+        </td>    
+        </tr>
         
+        {% endfor %}
+       
+    </table>
 </body>
 </html>
