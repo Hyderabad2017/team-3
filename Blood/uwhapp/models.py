@@ -10,7 +10,7 @@ class Donor(models.Model):
         ('B+','b+')
     )
     name = models.CharField(max_length=100)
-    userid = models.CharField(max_length=100)
+    userid = models.CharField(primary_key=True,max_length=100)
     password = models.CharField(max_length=100)
     blood_type = models.CharField(choices=blood_choices , max_length=3)
     age = models.IntegerField()
@@ -24,7 +24,7 @@ class Donor(models.Model):
 
 class BloodBank(models.Model):
     name = models.CharField(max_length=200)
-    userid = models.CharField(max_length=200)
+    userid = models.CharField(primary_key=True,max_length=200)
     password = models.CharField(max_length=200)
     #address is location of blood bank
     blood_units=models.IntegerField()
