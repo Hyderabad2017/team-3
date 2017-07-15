@@ -17,6 +17,7 @@ class Donor(models.Model):
     weight = models.FloatField()
     haemo = models.FloatField()
     last_donation = models.DateTimeField()
+    mobile = models.CharField(max_length=10,unique=True)
     #location is next
 
     def __str__(self):
