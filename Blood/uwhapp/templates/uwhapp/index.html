@@ -1,3 +1,4 @@
+{% load static %}
 <html>
 <head>
 <title>HTML.5</title>
@@ -264,7 +265,7 @@ p :hover {
     <input type="radio" name="radio-btn" id="img-1" checked />
    <li class="slide-container">
 		<div class="slide">
-			<img src="donate.jpg"  height="100%" width="100%"/>
+			<img src="{% static 'images/imagedonate.jpg'%}"  height="50%" width="50%"/>
         </div>
 		<div class="nav">
 			<label for="img-2" class="prev">&#x2039;</label>
@@ -275,7 +276,7 @@ p :hover {
     <input type="radio" name="radio-btn" id="img-2" />
     <li class="slide-container">
         <div class="slide">
-         <img src="bb.png" />
+         <img src="{% static 'images/bb.png'%}" />
         </div>
 	</li>
 </ul>

@@ -11,6 +11,7 @@ import urllib2
 import sys
 from getpass import getpass
 
+
 # Create your views here.
 class Counter:
     counter = 0
@@ -51,7 +52,7 @@ class BloodbankLogincheck(View):
             request_list.append(request_dict)
         return request_list
 
-    def get_context_dict(self, blood_units, username):
+    def get_context_dict(self, blood_bank_obj, username):
         all_donors = Donor.objects.all()
         list_donor = []
         for each_donor in all_donors:
@@ -64,8 +65,10 @@ class BloodbankLogincheck(View):
             }
             list_donor.append(each_context)
             donor_request = self.donor_requests()
-        list_donor = {'list_donor': list_donor, 'donor_requests': donor_request, 'blood_units': blood_units,
-                      'userid_bloodbank': username}
+        list_donor = {'list_donor': list_donor, 'donor_requests': donor_request,
+                      'blood_units': blood_bank_obj.blood_units,
+                      'userid_bloodbank': username, 'latitude': blood_bank_obj.latitude,
+                      'longitude': blood_bank_obj.longitude}
         return list_donor
 
     def post(self, request):
@@ -76,7 +79,7 @@ class BloodbankLogincheck(View):
             return redirect('/uwhapp/bloodbank')
         blood_bank_obj = blood_bank_obj[0]
         if blood_bank_obj.password == password:
-            context = self.get_context_dict(blood_bank_obj.blood_units, username)
+            context = self.get_context_dict(blood_bank_obj, username)
             return render(request, 'uwhapp/bloodbank.html', context)
         else:
             return redirect('/uwhapp/bloodbank')
