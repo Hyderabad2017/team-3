@@ -308,12 +308,27 @@
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
 	<script type="text/javascript"> 
-		document.getElementById("myBtn").addEventListener("click", function(){
+		
+		function post(path, params, method) {
+				    method = method || "post"; // Set method to post by default if not specified.
+
+				    // The rest of this code assumes you are not using a library.
+				    // It can be made less wordy if you use one.
+				    var form = document.createElement("form");
+				    form.setAttribute("method", method);
+			    	form.setAttribute("action", path);
+
+			    	document.body.appendChild(form);
+    					form.submit();
+				}
+		document.getElementById("myBtn").addEventListener("click", function()
+		{
 			var days=parseInt("{{date}}");
-			if(days<120)
-				alert("sorry you are not eligible");
+			if(days>120)
+				alert("Sorry you are not eligible");
 			else
-				{;}
+				post('fill path here',fill if any params);
+
 		});
    		
 	</script>
