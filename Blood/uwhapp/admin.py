@@ -20,3 +20,8 @@ class RequestModel(admin.ModelAdmin):
     pass
 
 admin.site.register(Requests,RequestModel)
+
+class EventModel(admin.ModelAdmin):
+    pass
+
+admin.site.register(Event,EventModel)

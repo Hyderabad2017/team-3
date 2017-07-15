@@ -37,3 +37,7 @@ class Requests(models.Model):
     request_units = models.IntegerField()
     blood_bank = models.ForeignKey(BloodBank)
 
+class Event(models.Model):
+    event_name = models.CharField(max_length=50)
+    event_details = models.CharField(max_length=200)
+    event_date = models.DateTimeField()
