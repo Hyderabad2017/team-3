@@ -49,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uwhapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -61,25 +61,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="donor.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-390">
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="donor_login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_login.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="514">
               <caret line="63" column="72" lean-forward="false" selection-start-line="63" selection-start-column="72" selection-end-line="63" selection-end-column="72" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="donor_register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="57" lean-forward="false" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-              <folding>
-                <marker date="1500128354000" expanded="true" signature="1391:1609" ph="..." />
-                <marker date="1500128354000" expanded="true" signature="1421:1595" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -154,6 +151,7 @@
         <option value="$PROJECT_DIR$/uwhapp/models.py" />
         <option value="$PROJECT_DIR$/uwhapp/urls.py" />
         <option value="$PROJECT_DIR$/uwhapp/views.py" />
+        <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/donor.html" />
       </list>
     </option>
   </component>
@@ -236,24 +234,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blood" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blood" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -669,6 +649,14 @@
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
