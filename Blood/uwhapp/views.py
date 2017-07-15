@@ -9,7 +9,13 @@ from models import BloodBank, Donor, Event, RequestToDonor, DonorHistory
 
 
 # Create your views here.
+class Counter:
+    counter = 0
 
+    def increment(self):
+        self.counter += 1
+    def set_to_zero(self):
+        self.counter = 0
 
 class Index(View):
     def get(self, request):
@@ -40,7 +46,7 @@ class BloodbankLogincheck(View):
             request_list.append(request_dict)
         return request_list
 
-    def get_context_dict(self,blood_units):
+    def get_context_dict(self, blood_units):
         all_donors = Donor.objects.all()
         list_donor = []
         for each_donor in all_donors:
@@ -53,7 +59,7 @@ class BloodbankLogincheck(View):
             }
             list_donor.append(each_context)
             donor_request = self.donor_requests()
-        list_donor = {'list_donor': list_donor, 'donor_requests': donor_request,'blood_units':blood_units}
+        list_donor = {'list_donor': list_donor, 'donor_requests': donor_request, 'blood_units': blood_units}
         return list_donor
 
     def post(self, request):
@@ -86,7 +92,7 @@ class DonorLogincheck(View):
                 'event_date': each_event.event_date
             }
             events_list.append(event_dict)
-        context['event_details'] = events_list
+        context['events'] = events_list
         return context
 
     def post(self, request):
@@ -98,6 +104,7 @@ class DonorLogincheck(View):
         blood_bank_obj = blood_bank_obj[0]
         if blood_bank_obj.password == password:
             context = self.get_context_dict(username)
+            context['counter']=Counter()
             return render(request, 'uwhapp/donor.html', context)
         else:
             return redirect('/uwhapp/donor')
@@ -112,7 +119,7 @@ class RegisterDetailsOfDonor(View):
     def post(self, request):
         last_donated = request.POST['last_donated']
         if last_donated == '':
-            last_donated = datetime.date.today() - datetime.timedelta(3*365/12)
+            last_donated = datetime.date.today() - datetime.timedelta(3 * 365 / 12)
         Donor.objects.create(
             name=request.POST['user'],
             userid=request.POST['userid'],
@@ -152,6 +159,7 @@ class DonationAccept(View):
 
     def post(self, request):
         userid = request.POST.get('userid')
+        print userid
         request_donor_objects = RequestToDonor.objects.all()
         for each_request_to_donor in request_donor_objects:
             if each_request_to_donor.requestee.userid == userid:
