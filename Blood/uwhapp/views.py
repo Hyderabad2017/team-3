@@ -39,6 +39,7 @@ class BloodbankLogincheck(View):
                 'last_donation':each_donor.last_donation
             }
             list_donor.append(each_context)
+            list_donor={'list_donor':list_donor}
         return list_donor
     def post(self, request):
         username = request.POST.get('user')
