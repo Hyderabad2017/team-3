@@ -33,20 +33,13 @@
         <td>{{each_detail.blood_type}}</td>
         <td>{{each_detail.last_donation}}</td>
         <td>{{each_detail.haemo}}</td>
+
         </form>
-        
-            <form action="donation_accept" method="post">
-            <td>
-            <input type="submit" value="Yes">
-            
-            </td>        
-        </form>
-        
         </tr>
         {% endfor %}
       </tbody>
   </table>
-  
+
     <center>
         <form action="send_alert" method="post">
             <input type="submit" class="btn btn-danger" value="Send Alert">
@@ -54,7 +47,7 @@
             <input type="hidden" class="btn btn-primary" value="{{userid_bloodbank}}" name="userid_bloodbank"/>
         </form>
     </center>
-    
+
     <table class="table table-striped">
         <thead>
         <tr>
@@ -73,16 +66,16 @@
         <td>{{each_detail.request_units}}</td>
         <td>{{each_detail.blood_bank}}</td>
         </form>
-        
+
             <form action="donation_accept" method="post">
                 <td>
             <input type="submit" value="Yes">
-            <input type="hidden" class="btn btn-primary" name={{each_detail.userid}}>
+            <input type="hidden" class="btn btn-primary" value="{{each_detail.userid}}" name="userid">
              </td>
             </form>
-           
+
         </tr>
-        
+
         {% endfor %}
        </tbody>
     </table>

@@ -74,8 +74,8 @@
       <file leaf-file-name="donor.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2076">
-              <caret line="207" column="69" lean-forward="false" selection-start-line="207" selection-start-column="69" selection-end-line="207" selection-end-column="69" />
+            <state relative-caret-position="-816">
+              <caret line="160" column="57" lean-forward="true" selection-start-line="160" selection-start-column="57" selection-end-line="160" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -94,8 +94,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uwhapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="45" column="53" lean-forward="false" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
+            <state relative-caret-position="-1890">
+              <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -116,8 +116,8 @@
       <file leaf-file-name="bloodbank.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/bloodbank.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="66" column="15" lean-forward="true" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
+            <state relative-caret-position="729">
+              <caret line="83" column="7" lean-forward="false" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -138,6 +138,7 @@
       <find>count++</find>
       <find>style.css</find>
       <find>list_donor</find>
+      <find>__futu</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -601,8 +602,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2076">
-          <caret line="207" column="69" lean-forward="false" selection-start-line="207" selection-start-column="69" selection-end-line="207" selection-end-column="69" />
+        <state relative-caret-position="-816">
+          <caret line="160" column="57" lean-forward="true" selection-start-line="160" selection-start-column="57" selection-end-line="160" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -649,14 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/bloodbank.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="66" column="15" lean-forward="true" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uwhapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -667,10 +660,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/bloodbank.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="83" column="7" lean-forward="false" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/uwhapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="45" column="53" lean-forward="false" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
+        <state relative-caret-position="-1890">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
