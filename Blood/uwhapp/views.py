@@ -14,8 +14,10 @@ class Counter:
 
     def increment(self):
         self.counter += 1
+
     def set_to_zero(self):
         self.counter = 0
+
 
 class Index(View):
     def get(self, request):
@@ -40,13 +42,13 @@ class BloodbankLogincheck(View):
             request_dict = {
                 'name': each_request.requestee.name,
                 'userid': each_request.requestee.userid,
-                'request_units': each_request.request_date,
-                'blood_bank': each_request.blood_banks.name
+                'request_units': each_request.request_units,
+                'blood_bank': each_request.blood_bank.name
             }
             request_list.append(request_dict)
         return request_list
 
-    def get_context_dict(self, blood_units):
+    def get_context_dict(self, blood_units,username):
         all_donors = Donor.objects.all()
         list_donor = []
         for each_donor in all_donors:
@@ -59,7 +61,7 @@ class BloodbankLogincheck(View):
             }
             list_donor.append(each_context)
             donor_request = self.donor_requests()
-        list_donor = {'list_donor': list_donor, 'donor_requests': donor_request, 'blood_units': blood_units}
+        list_donor = {'list_donor': list_donor, 'donor_requests': donor_request, 'blood_units': blood_units,'userid_bloodbank':username}
         return list_donor
 
     def post(self, request):
@@ -70,7 +72,7 @@ class BloodbankLogincheck(View):
             return redirect('/uwhapp/bloodbank')
         blood_bank_obj = blood_bank_obj[0]
         if blood_bank_obj.password == password:
-            context = self.get_context_dict(blood_bank_obj.blood_units)
+            context = self.get_context_dict(blood_bank_obj.blood_units,username)
             return render(request, 'uwhapp/bloodbank.html', context)
         else:
             return redirect('/uwhapp/bloodbank')
@@ -104,7 +106,7 @@ class DonorLogincheck(View):
         blood_bank_obj = blood_bank_obj[0]
         if blood_bank_obj.password == password:
             context = self.get_context_dict(username)
-            context['counter']=Counter()
+            context['counter'] = Counter()
             return render(request, 'uwhapp/donor.html', context)
         else:
             return redirect('/uwhapp/donor')
@@ -140,7 +142,7 @@ class SendAlert(View):
 
     def post(self, request):
         all_donor = Donor.objects.all()
-        blood_bank = BloodBank.objects.get(name=request.POST.get('name'))
+        blood_bank = BloodBank.objects.get(userid=request.POST.get('userid_bloodbank'))
         for each_donor in all_donor:
             self.send_sms_request(each_donor.mobile)
             RequestToDonor.objects.create(

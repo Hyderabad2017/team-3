@@ -20,7 +20,6 @@ class Donor(models.Model):
     mobile = models.CharField(max_length=10, unique=True)
     last_donation = models.DateField()
 
-    # location is next
 
     def __str__(self):
         return self.name
@@ -30,8 +29,9 @@ class BloodBank(models.Model):
     name = models.CharField(max_length=200)
     userid = models.CharField(primary_key=True, max_length=200)
     password = models.CharField(max_length=200)
-    # address is location of blood bank
     blood_units = models.IntegerField()
+    latitude = models.CharField(max_length=20)
+    longitude = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
@@ -52,3 +52,5 @@ class Event(models.Model):
 class DonorHistory(models.Model):
     date = models.DateField()
     donor = models.ForeignKey(Donor)
+
+
