@@ -128,8 +128,8 @@ input:checked + .slider:before {
 			</form>
 
 			<form method="post" action="">
-				Points<br>
-				<!-- <input type="checkbox" name="donate" value="true">want to donate</input> -->
+				Rank:<br>
+				<input type="checkbox" name="donate" value="true">want to donate</input>
 			</form>
 			<!--<ul class="fh5co-social">
 				<li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -182,20 +182,18 @@ input:checked + .slider:before {
 	<!-- END #fh5co-header -->
 	<div class="container-fluid">
 		<div class="row fh5co-post-entry">
-		{% with count=1 %}
 			{% for each_event in events %}
 				<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
 					<figure>
 					<img src="images/pic_1.jpg" height="200" alt="Image" class="img-responsive"/>
 					</figure>
-					<span class="fh5co-meta">{{ count }}</span>
+					<span class="fh5co-meta">{{ counter.increment }}</span>
 					<span class="fh5co-meta">{{each_event.event_name}}<br>{{each_event.event_date}}</span>
 					<!-- <h2 class="fh5co-article-title"><a href="single.html">Address 1</a></h2> -->
 					<!-- <span class="fh5co-meta fh5co-date">March 6th, 2016</span> -->
 					<button type="button" id=participate class="btn btn-default">Engage</button>
 				</article>
 			{% endfor %}
-		{% endwith %}
 			<!-- <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
 				<figure>
 					<a href="single.html"><img src="images/pic_2.jpg" alt="Image" class="img-responsive"></a>
