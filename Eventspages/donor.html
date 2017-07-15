@@ -6,7 +6,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Donor</title>
+	<title>Donor</title>	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -112,7 +112,7 @@
 					<li><a href="#"><i class="icon-instagram"></i></a></li>
 				</ul>-->
 				<div class="col-lg-12 col-md-12 text-center">
-					<h1 id="fh5co-logo"><a href="index.html">Events </a></h1>
+					<h1 id="fh5co-logo"><a href="index.html"> Events </a></h1>
 				</div>
 
 			</div>
@@ -122,24 +122,28 @@
 	<!-- END #fh5co-header -->
 	<div class="container-fluid">
 		<div class="row fh5co-post-entry">
-			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-				<figure>
-				<a href="single.html"><img src="images/pic_1.jpg" height="200" alt="Image" class="img-responsive"/></a>
-				</figure>
-				<span class="fh5co-meta"><a href="single.html">Event 1</a></span>
-				<span class="fh5co-meta"><a href="single.html">Blood camp in madhapur on <br>25th july</a></span>
-				<!-- <h2 class="fh5co-article-title"><a href="single.html">Address 1</a></h2> -->
-				<!-- <span class="fh5co-meta fh5co-date">March 6th, 2016</span> -->
-			</article>
-
-			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
+		{% with count=1 %}
+			{% for each_event in events %}
+				<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
+					<figure>
+					<img src="images/pic_1.jpg" height="200" alt="Image" class="img-responsive"/>
+					</figure>
+					<span class="fh5co-meta">{{ count++ }}</span>
+					<span class="fh5co-meta">{{each_event.event_name}}<br>{{each_event.event_date}}</span>
+					<!-- <h2 class="fh5co-article-title"><a href="single.html">Address 1</a></h2> -->
+					<!-- <span class="fh5co-meta fh5co-date">March 6th, 2016</span> -->
+					<button type="button" id=participate class="btn btn-default">Engage</button>
+				</article>
+			{% endfor %}
+		{% endwith %}
+			<!-- <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
 				<figure>
 					<a href="single.html"><img src="images/pic_2.jpg" alt="Image" class="img-responsive"></a>
 				</figure>
 				<span class="fh5co-meta"><a href="single.html">Event 2</a></span>
 				<span class="fh5co-meta"><a href="single.html">Blood camp in LBNagar on <br>30th july</a></span>
-				<!-- <h2 class="fh5co-article-title"><a href="single.html">Address 2</a></h2> -->
-				<!-- <span class="fh5co-meta fh5co-date">March 6th, 2016</span> -->
+				<h2 class="fh5co-article-title"><a href="single.html">Address 2</a></h2>
+				<span class="fh5co-meta fh5co-date">March 6th, 2016</span>
 			</article>
 
 			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
@@ -148,8 +152,8 @@
 				</figure>
 				<span class="fh5co-meta"><a href="single.html">Event 3</a></span>
 				<span class="fh5co-meta"><a href="single.html">Blood camp in Gachibowli on <br>5th August</a></span>
-				<!-- <h2 class="fh5co-article-title"><a href="single.html">Address 1</a></h2> -->
-				<!-- <span class="fh5co-meta fh5co-date">March 6th, 2016</span> -->
+				<h2 class="fh5co-article-title"><a href="single.html">Address 1</a></h2>
+				<span class="fh5co-meta fh5co-date">March 6th, 2016</span>
 			</article>
 			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
 				<figure>
@@ -157,10 +161,10 @@
 				</figure>
 				<span class="fh5co-meta"><a href="single.html">Event 4</a></span>
 				<span class="fh5co-meta"><a href="single.html">Blood camp in Miyapur on <br>25th August</a></span>
-				<!-- <h2 class="fh5co-article-title"><a href="single.html">Address 1</a></h2> -->
-				<!-- <span class="fh5co-meta fh5co-date">March 6th, 2016</span> -->
+				<h2 class="fh5co-article-title"><a href="single.html">Address 1</a></h2>
+				<span class="fh5co-meta fh5co-date">March 6th, 2016</span>
 			</article>
-
+ -->
 			<!-- <div class="clearfix visible-xs-block"></div> -->
 			<!-- <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
 				<figure>
@@ -303,6 +307,16 @@
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
+	<script type="text/javascript"> 
+		document.getElementById("myBtn").addEventListener("click", function(){
+			var days=parseInt("{{date}}");
+			if(days<120)
+				alert("sorry you are not eligible");
+			else
+				{;}
+		});
+   		
+	</script>
 
 	</body>
 </html>
