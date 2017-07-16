@@ -3,12 +3,13 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>A Pen by  Asra</title>
+  <title>Donor Login</title>
   
   
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<<<<<<< HEAD
     <style>
     footer{
 height:20%;
@@ -18,6 +19,9 @@ background-color:black;
     text-align: center;
 }</style>
 
+=======
+		<link rel="icon" href="{% static 'images/blood-drop.ico' %}"/>
+>>>>>>> 888806ee317225bd2af214ddeb0f760454593dfd
   
 </head>
 
@@ -26,17 +30,6 @@ background-color:black;
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-login">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-xs-6">
-								<a href="#" class="active" id="login-form-link">Login</a>
-							</div>
-							<div class="col-xs-6">
-								<a href="#" id="register-form-link">Register</a>
-							</div>
-						</div>
-						<hr>
-					</div>
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
@@ -53,7 +46,7 @@ background-color:black;
 									</div>
 									<div class="form-group">
 										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
+											<div class="col-lg-12">
 												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
 											</div>
 										</div>
@@ -69,7 +62,16 @@ background-color:black;
 									</div>
 								</form>
 								<form method="post" action="donor_register">
-									<input type="submit" value="register"/>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="text-center">
+													<input type="submit" class="form-control btn btn-login" value="register"/>
+												</div>
+											</div>
+										</div>
+									</div>
+									
 								</form>
 							</div>
 						</div>
