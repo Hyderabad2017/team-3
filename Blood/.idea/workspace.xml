@@ -27,16 +27,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uwhapp/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uwhapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -59,21 +49,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Blood/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-927">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="318">
+              <caret line="118" column="17" lean-forward="true" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Blood/urls.py">
+      <file leaf-file-name="donor_register.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="-441">
+              <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="donor_login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="70" lean-forward="true" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -143,14 +143,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_login.html" />
         <option value="$PROJECT_DIR$/static/css/registration.css" />
         <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/success.html" />
         <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/bloodbank_login.html" />
         <option value="$PROJECT_DIR$/uwhapp/admin.py" />
         <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/success_request.html" />
         <option value="$PROJECT_DIR$/uwhapp/urls.py" />
-        <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_register.html" />
         <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/donor.html" />
         <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/index.html" />
         <option value="$PROJECT_DIR$/Blood/urls.py" />
@@ -158,6 +156,8 @@
         <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/bloodbank.html" />
         <option value="$PROJECT_DIR$/uwhapp/views.py" />
         <option value="$PROJECT_DIR$/Blood/settings.py" />
+        <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_login.html" />
+        <option value="$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_register.html" />
       </list>
     </option>
   </component>
@@ -493,9 +493,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="57" lean-forward="false" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-          <folding>
-            <marker date="1500178964000" expanded="true" signature="2277:2495" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -579,6 +577,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="63" column="72" lean-forward="false" selection-start-line="63" selection-start-column="72" selection-end-line="63" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -586,9 +585,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="53" column="69" lean-forward="false" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
-          <folding>
-            <marker date="1500178964000" expanded="true" signature="2277:2495" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -710,9 +707,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="57" lean-forward="false" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-          <folding>
-            <marker date="1500178964000" expanded="true" signature="2277:2495" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -765,23 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3990">
           <caret line="266" column="1" lean-forward="false" selection-start-line="266" selection-start-column="1" selection-end-line="266" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="63" column="72" lean-forward="false" selection-start-line="63" selection-start-column="72" selection-end-line="63" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="53" column="69" lean-forward="false" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
-          <folding>
-            <marker date="1500178964000" expanded="true" signature="2277:2495" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,8 +865,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Blood/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-927">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="318">
+          <caret line="118" column="17" lean-forward="true" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="70" lean-forward="true" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/donor_register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-441">
+          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
           <folding />
         </state>
       </provider>
