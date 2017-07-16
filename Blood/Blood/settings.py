@@ -25,7 +25,7 @@ SECRET_KEY = 'k-4ug8r#bs_(2u%)8m@tft%)%-u)1+vcsmbwh1%8=tlkfq)=+n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.43.35','127.0.0.1','10.49.189.122']
 
 
 # Application definition
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djangoforandroid.builder',
-    'djangoforandroid.mdl',
+    #'djangoforandroid.builder',
+    #'djangoforandroid.mdl',
     #'djangoforandroid.d4a'
 ]
 

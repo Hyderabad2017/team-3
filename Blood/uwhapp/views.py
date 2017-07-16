@@ -64,7 +64,7 @@ class BloodbankLogincheck(View):
                 'last_donation': each_donor.last_donation
             }
             list_donor.append(each_context)
-            donor_request = self.donor_requests()
+        donor_request = self.donor_requests()
         list_donor = {'list_donor': list_donor, 'donor_requests': donor_request,
                       'blood_units': blood_bank_obj.blood_units,
                       'userid_bloodbank': username, 'latitude': blood_bank_obj.latitude,
@@ -198,7 +198,7 @@ class DonationAccept(View):
         # login creds
         username = '8686342823'
         passwd = 'vamshi17'
-        message = 'United Way of Hyderabad'
+        message = 'United Way of Hyderabad THANK YOU'
         # Logging into the SMS Site
         url = 'http://site24.way2sms.com/Login1.action?'
         data = 'username=' + username + '&password=' + passwd + '&Submit=Sign+in'
@@ -241,3 +241,4 @@ class DonationAccept(View):
             donor=user_object
         )
         self.send_thank_sms(userid)
+        return render(request, 'uwhapp/success.html')
