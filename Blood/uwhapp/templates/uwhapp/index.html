@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -135,11 +136,13 @@
 					  
 					  
 						
-  
-                            <a class="button" href="donar_registration.html">DONAR</a>
+  				<form method="post" action="donor">
+				<input type="submit" class="button" value="DONOR"/>
+				</form>
 
-                          <a href="bloodbank_login.html"><button class="button">BLOODBANK</button></a>
-
+			<form method="post" action="bloodbank">
+                                <input type="submit" class="button" value="BLOODBANK"/>
+                                </form>
 </div>
 
 					  </div>
