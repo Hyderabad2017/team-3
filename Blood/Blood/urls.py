@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url(r'^d4a/', include('djangoforandroid.d4a.urls')),
     url(r'^uwhapp/',include('uwhapp.urls'))
 ]

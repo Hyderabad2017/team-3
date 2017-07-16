@@ -5,8 +5,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="icon" href="{% static 'images/blood-drop.ico' %}"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    var loc;
+      var lat,long;
+      function getLocation() {
+      if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+            }
+        }
+
+
+
+
+function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+  var dLon = deg2rad(lon2-lon1);
+  var a =
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+    Math.sin(dLon/2) * Math.sin(dLon/2)
+    ;
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  var d = R * c; // Distance in km
+  return d;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI/180)
+}
+       function showPosition(position) {
+            lat=position.coords.latitude;
+            long=position.coords.longitude;
+              loc=getDistanceFromLatLonInKm(lat,long,{{latitude}},{{longitude}});
+        console.log(loc,lat,long,{{latitude}},{{longitude}});
+        document.getElementById("donor_location").innerHTML=loc.toFixed(1);
+            }
+
+
+
+    </script>
 </head>
 <body>
 
@@ -14,7 +55,7 @@
 
    <h2>List of Donors</h2>
   <!-- <p>The .table-striped class adds zebra-stripes to a table:</p> -->
-  <table class="table table-striped">
+  <table class="table table-striped table-responsive">
     <thead>
       <tr>
         <th>Firstname</th>
@@ -34,68 +75,12 @@
         <td>{{each_detail.blood_type}}</td>
         <td>{{each_detail.last_donation}}</td>
         <td>{{each_detail.haemo}}</td>
-        <!----------->
-        <script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } 
-}
-
-function showPosition(position) {
-    
-    var latitude=position.coords.latitude;
-    var logitude=position.coords.longitude;
-    
-    
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
-}
-
-</script>
-            
-        <!--------->
-            
         </form>
+        <td><script>getLocation();</script>
+        <h4 id="donor_location"></h4>
+        </td>
         </tr>
         {% endfor %}
-<script>
-function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
-  var R = 6371; // Radius of the earth in km
-  var dLat = deg2rad(lat2-lat1);  // deg2rad below
-  var dLon = deg2rad(lon2-lon1); 
-  var a = 
-    Math.sin(dLat/2) * Math.sin(dLat/2) +
-    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
-    Math.sin(dLon/2) * Math.sin(dLon/2)
-    ; 
-  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-  var d = R * c; // Distance in km
-  return d;
-}
-
-function deg2rad(deg) {
-  return deg * (Math.PI/180)
-}
-            
-</script>
       </tbody>
   </table>
 
@@ -107,7 +92,7 @@ function deg2rad(deg) {
         </form>
     </center>
 
-    <table class="table table-striped">
+    <table class="table table-striped table-responsive">
         <thead>
         <tr>
         <th>User Id</th>

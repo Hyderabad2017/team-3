@@ -30,8 +30,8 @@ class BloodBank(models.Model):
     userid = models.CharField(primary_key=True, max_length=200)
     password = models.CharField(max_length=200)
     blood_units = models.IntegerField()
-    latitude = models.CharField(max_length=20)
-    longitude = models.CharField(max_length=20)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
 
     def __str__(self):
         return self.name
