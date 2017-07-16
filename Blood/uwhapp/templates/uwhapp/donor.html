@@ -149,7 +149,7 @@ input:checked + .slider:before {
 			{% for each_event in events %}
 				<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
 					<figure>
-					<img src="images/pic_1.jpg" height="200" alt="Image" class="img-responsive"/>
+					<img src="{% static 'images/pic_1.jpg'%}" height="200" alt="Image" class="img-responsive"/>
 					</figure>
 					<span class="fh5co-meta">{{ counter.increment }}</span>
 					<span class="fh5co-meta">{{each_event.event_name}}<br>{{each_event.event_date}}</span>
