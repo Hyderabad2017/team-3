@@ -25,7 +25,11 @@ SECRET_KEY = 'k-4ug8r#bs_(2u%)8m@tft%)%-u)1+vcsmbwh1%8=tlkfq)=+n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['192.168.43.35','127.0.0.1','10.49.189.122']
+
+ALLOWED_HOSTS = ['54.255.241.239']
+
 
 
 # Application definition
@@ -38,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'djangoforandroid.builder',
-    #'djangoforandroid.mdl',
+#    'djangoforandroid.builder',
+ #   'djangoforandroid.mdl',
     #'djangoforandroid.d4a'
 ]
 
@@ -82,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'uwhdb',
         'USER':'root',
-        'PASSWORD':'pandu123',
+        'PASSWORD':'team3',
         'PORT':''
     }
 }
@@ -130,5 +134,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'apk')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'apk')
 

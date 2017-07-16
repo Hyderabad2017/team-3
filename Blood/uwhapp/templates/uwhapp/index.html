@@ -1,296 +1,162 @@
 {% load static %}
-<html>
-<head>
-<title>BLOOD DONATION</title>
-<style type='text/css'>
-header,footer{
-height:20%;
-width:100%;
-background-color:black;
-    color: aliceblue;
-    text-align: center;
-}
-#content{
-height:80%;
-width:100%;
-float:left;
-background-color:black;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Home Pageage</title>
 
-#button1{
-width: 300px;
-height: 40px;
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	
+	<link rel="stylesheet" href="css/superslide/superslides.css">
+    <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/nivo-lightbox/nivo-lightbox.css">
+    <link rel="stylesheet" href="css/themes/default/default.css">
+    <link rel="stylesheet" href="css/animate/animate.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.transitions.css">
 
-}
-#button2{
-width: 300px;
-height: 40px;
-}
-
-
-
-@import url(http://fonts.googleapis.com/css?family=Varela+Round);
-
-html, body { background: black url("http://codepen.io/images/classy_fabric.png"); }
-
-.slides {
-    padding: 0;
-    width:609px;
-    height:420px;
-    display: block;
-    margin: 0 auto;
-    position: relative;
-}
-
-.slides * {
-    user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-}
-
-.slides input { display: none; }
-
-.slide-container { display: block; }
-
-.slide {
-    top: 0;
-    opacity: 0;
-    width: 609px;
-    height: 420px;
-    display: block;
-    position: absolute;
-
-    transform: scale(0);
-
-    transition: all .7s ease-in-out;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-}
-
-.nav label {
-    width: 200px;
-    height: 100%;
-    display: none;
-    position: absolute;
-
-	  opacity: 0;
-    z-index: 9;
+    <h1><center>BLOOD DONATION</center></h1>
+    <style>
+	
+	.button {
+    background-color: #222;
+    background-image: -webkit-linear-gradient(hsla(0,0%,100%,.1), hsla(0,0%,0%,0));
+    background-image:    -moz-linear-gradient(hsla(0,0%,100%,.1), hsla(0,0%,0%,0));
+    background-image:     -ms-linear-gradient(hsla(0,0%,100%,.1), hsla(0,0%,0%,0));
+    background-image:      -o-linear-gradient(hsla(0,0%,100%,.1), hsla(0,0%,0%,0));
+    background-image:         linear-gradient(hsla(0,0%,100%,.1), hsla(0,0%,0%,0));
+    border: 1px solid #161616;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px hsla(0,0%,0%,.4),
+                inset 0 1px 0 hsla(0,0%,100%,.2);
+    color: #c6c6c6;
     cursor: pointer;
-
-    transition: opacity .2s;
-
-    color: white;
-    font-size: 156pt;
-    text-align: center;
-    line-height: 380px;
-    font-family: "Varela Round", sans-serif;
-    background-color: rgba(255, 255, 255, .3);
-    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+    display: inline-block;
+    font: bold 14px/10px sans-serif;
+    margin: 20px;
+    padding: 10px 15px;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px hsla(0,0%,0%,.8);
+    transition: .05s;
+    vertical-align: top;
 }
-
-.slide:hover + .nav label { opacity: 0.5; }
-
-.nav label:hover { opacity: 1; }
-
-.nav .next { right: 0; }
-
-input:checked + .slide-container  .slide {
+.button:hover,
+.button:focus {
+    background-color: #242424;
+    color: #e6e6e6;
+}
+.button:after {
+    background-image: -webkit-linear-gradient(left, hsla(0,0%,0%,0), hsla(0,0%,100%,.8), hsla(0,0%,0%,0));
+    background-image:    -moz-linear-gradient(left, hsla(0,0%,0%,0), hsla(0,0%,100%,.8), hsla(0,0%,0%,0));
+    background-image:     -ms-linear-gradient(left, hsla(0,0%,0%,0), hsla(0,0%,100%,.8), hsla(0,0%,0%,0));
+    background-image:      -o-linear-gradient(left, hsla(0,0%,0%,0), hsla(0,0%,100%,.8), hsla(0,0%,0%,0));
+    background-image:         linear-gradient(left, hsla(0,0%,0%,0), hsla(0,0%,100%,.8), hsla(0,0%,0%,0));
+    background-position: 50% 0%;
+    background-size: 200% 200%;
+    content: '';
+    height: 1px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+}
+.button:hover:after,
+.button:focus:after {
     opacity: 1;
-
-    transform: scale(1);
-
-    transition: opacity 1s ease-in-out;
+    visibility: visible;
 }
-
-input:checked + .slide-container .nav label { display: block; }
-
-.nav-dots {
-	width: 100%;
-	bottom: 9px;
-	height: 11px;
-	display: block;
-	position: absolute;
-	text-align: center;
-        color:red;
+.button:before {
+    background: #393939;
+    bottom: -8px;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px hsla(0,0%,100%,.2),
+                inset 0 1px 1px hsla(0,0%,0%,.4),
+                inset 0 1px 5px hsla(0,0%,0%,.2);
+    content: '';
+    left: -8px;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    z-index: -1;
 }
-
-.nav-dots .nav-dot {
-
-	top: -5px;
-	width: 11px;
-	height: 11px;
-	margin: 0 4px;
-	position: relative;
-	border-radius: 100%;
-	display: inline-block;
-	background-color: rgba(0, 0, 0, 0.6);
+.button:active {
+    background-color: #202020;
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.1),
+                inset 0 1px 4px hsla(0,0%,0%,.8);
+    color: #c6c6c6;
+    padding: 11px 15px 9px;
 }
-
-.nav-dots .nav-dot:hover {
-	cursor: pointer;
-	background-color: rgba(0, 0, 0, 0.8);
+.button:active:after {
+    left: 1px;
+    opacity: .5;
+    right: 1px;
+    top: 31px;
 }
+​
+	</style>
+  </head>
+  <body>
+    <header id="home" class="header navbar-fixed-top">
+			<div class="navbar navbar-default main-menu">
+			
+				<div class="container">
+					<div class="navbar-header">
+						
+						<a  href="#home" class="navbar-brand"><img src="{% static 'images/if_blood_345371.png' %}" alt="Logo" /></a>
+					 <!-- <a class="navbar-brand" href="index.html"></a> -->
+					</div>
+				   
 
-input#img-1:checked ~ .nav-dots label#img-dot-1,
-input#img-2:checked ~ .nav-dots label#img-dot-2,
- {
-	background: rgba(0, 0, 0, 0.8);
-}
-/*setup*/
+					</div>
+				</div>
+			</div> <!-- end of navbar -->
+    </header>
+	
+	<section id="home" class="bbgimage">
+		<div class="header-image homepage2banner">
+			<div class="container">
+				<div class="row">
+				
+					
+					<div class="col-sm-12 col-xs-12 hmheading-text wow zoomIn" data-wow-duration=".5s">
+					  <h1>DONATE BLOOD! SAVE LIFE!</h1>
+					  
+					  
+						
+  				<form method="post" action="donor">
+				<input type="submit" class="button" value="DONOR"/>
+				</form>
 
-* {
-  margin: 0;
-  padding: 0;
-}
-}
-
-@font-face {
-  font-family:'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(http://themes.googleusercontent.com/static/fonts/pacifico/v5/yunJt0R8tCvMyj_V4xSjafesZW2xOQ-xsNqO47m55DA.woff) format('woff');
-}
-}
-
-body {
-  background-color: black;
-  background: repeating-linear-gradient(45deg, black 0%, black 10%, black 0%, black 50%) 0 / 15px 15px;
-}
-
-p {
-  text-align: center;
-  font-size: 4em;
-  margin: 20px 0 20px 0;
-}
-
-p {
-  text-decoration: none;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-
-
-p  {
-  color: red;
-  font-family: Pacifico;
-}
-
-p:hover {
-  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
-  animation: neon3 1.5s ease-in-out infinite alternate;
-}
-
-
-p :hover {
-  color: #ffffff;
-}
-/*glow for webkit*/
-
-
-
-@-webkit-keyframes neon3 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00FFFF, 0 0 70px #00FFFF, 0 0 80px #00FFFF, 0 0 100px #00FFFF, 0 0 150px #00FFFF;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00FFFF, 0 0 35px #00FFFF, 0 0 40px #00FFFF, 0 0 50px #00FFFF, 0 0 75px #00FFFF;
-  }
-}
-
-
-/*glow for mozilla*/
-
-
-
-@-moz-keyframes neon3 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00FFFF, 0 0 70px #00FFFF, 0 0 80px #00FFFF, 0 0 100px #00FFFF, 0 0 150px #00FFFF;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00FFFF, 0 0 35px #00FFFF, 0 0 40px #00FFFF, 0 0 50px #00FFFF, 0 0 75px #00FFFF;
-  }
-}
-
-
-/*glow*/
-
-@keyframes neon3 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00FFFF, 0 0 70px #00FFFF, 0 0 80px #00FFFF, 0 0 100px #00FFFF, 0 0 150px #00FFFF;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00FFFF, 0 0 35px #00FFFF, 0 0 40px #00FFFF, 0 0 50px #00FFFF, 0 0 75px #00FFFF;
-  }
-}
-
-
-/*REEEEEEEEEEESPONSIVE*/
-
-@media (max-width: 650px) {
-  #container {
-    width: 100%;
-  }
-  p {
-    font-size: 3.5em;
-  }
-}
-
-
-
-
-</style>
-<link rel="icon" href="{% static 'images/blood-drop.ico' %}"/>
-</head>
-<body>
-<header>
-<div id="container">
-  <p>
-    BLOOD DONATION
-  </p>
-
+			<form method="post" action="bloodbank">
+                                <input type="submit" class="button" value="BLOODBANK"/>
+                                </form>
 </div>
-</div>
-</header>
 
-<div id="content">
-<ul class="slides">
-    <input type="radio" name="radio-btn" id="img-1" checked />
-   <li class="slide-container">
-		<div class="slide">
-			<img src="{% static 'images/imagedonate.jpg'%}"  height="50%" width="50%"/>
-        </div>
-		<div class="nav">
-			<label for="img-2" class="prev">&#x2039;</label>
-			<label for="img-2" class="next">&#x203a;</label>
-		</div>
-    </li>
+					  </div>
+					</div>
+					
+				</div> <!-- end of row -->
+			</div> <!-- end of container -->
 
-    <input type="radio" name="radio-btn" id="img-2" />
-    <li class="slide-container">
-        <div class="slide">
-         <img src="{% static 'images/bb.png'%}" />
-        </div>
-	</li>
-</ul>
-</div>
-  <center>
-  <form method="post" action="donor">
-    <input type="submit" value="DONOR" id="button1"/>
-</form>
-<form method="post" action="bloodbank">
-    <input type="submit" value="BLOODBANK" id="button2"/>
-</form>
-  </center>	
-<footer >
-    <h2><br>A drop of blood can save a life! Do not waste it and donate blood.
-
- </h2></footer>
+			
+	
+	</section>
+	
+	
+	</body>
+</html>	
+	
+	

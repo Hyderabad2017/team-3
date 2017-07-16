@@ -62,8 +62,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Blood/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-777">
-              <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="-927">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/uwhapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+              <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -104,8 +104,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4290">
-              <caret line="286" column="28" lean-forward="false" selection-start-line="286" selection-start-column="28" selection-end-line="286" selection-end-column="28" />
+            <state relative-caret-position="2430">
+              <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,8 +114,8 @@
       <file leaf-file-name="bloodbank.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/bloodbank.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="106" column="53" lean-forward="true" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
+            <state relative-caret-position="294">
+              <caret line="107" column="53" lean-forward="false" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -494,7 +494,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="57" lean-forward="false" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
           <folding>
-            <marker date="1500160575000" expanded="true" signature="2277:2495" ph="..." />
+            <marker date="1500178964000" expanded="true" signature="2277:2495" ph="..." />
           </folding>
         </state>
       </provider>
@@ -587,7 +587,7 @@
         <state relative-caret-position="300">
           <caret line="53" column="69" lean-forward="false" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
           <folding>
-            <marker date="1500160575000" expanded="true" signature="2277:2495" ph="..." />
+            <marker date="1500178964000" expanded="true" signature="2277:2495" ph="..." />
           </folding>
         </state>
       </provider>
@@ -711,7 +711,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="57" lean-forward="false" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
           <folding>
-            <marker date="1500160575000" expanded="true" signature="2277:2495" ph="..." />
+            <marker date="1500178964000" expanded="true" signature="2277:2495" ph="..." />
           </folding>
         </state>
       </provider>
@@ -780,7 +780,7 @@
         <state relative-caret-position="300">
           <caret line="53" column="69" lean-forward="false" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
           <folding>
-            <marker date="1500160575000" expanded="true" signature="2277:2495" ph="..." />
+            <marker date="1500178964000" expanded="true" signature="2277:2495" ph="..." />
           </folding>
         </state>
       </provider>
@@ -833,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4290">
-          <caret line="286" column="28" lean-forward="false" selection-start-line="286" selection-start-column="28" selection-end-line="286" selection-end-column="28" />
+        <state relative-caret-position="2430">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -859,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/uwhapp/templates/uwhapp/bloodbank.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="106" column="53" lean-forward="true" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
+        <state relative-caret-position="294">
+          <caret line="107" column="53" lean-forward="false" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -878,7 +878,7 @@
     <entry file="file://$PROJECT_DIR$/uwhapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
@@ -887,8 +887,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Blood/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-777">
-          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="-927">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
